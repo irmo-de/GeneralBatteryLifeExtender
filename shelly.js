@@ -8,10 +8,15 @@
 
 // Program summary:
 // The script is using a statemachine to charge the battery to 80% and then stop charging.
-// For the first 5 minutes we monitor the power consumption of the charger. This mean value is used to calculate the tolerance for contant voltage charging.
+// For the first 5 minutes we monitor the power consumption of the charger. This mean value is used to calculate the tolerance for constant voltage charging.
 
 // Author: Irmo Ebel
 // Date: 2023-05-13
+
+// Release notes:
+
+// 2020-05-14: Added LED color to indicate the state of the statemachine
+// 2020-05-13: Initial release
 
 
 // define constants
@@ -31,6 +36,14 @@ let circular_buffer_index = 0; // index of the circular buffer
 
 
 function stubCB(res, error_code, error_msg, ud) {}
+
+function processHttpResponse(result, error_code, error) {
+  if (error_code !== 0) {
+    // process error
+  } else {
+    // process result
+  }
+}
 
 
 function GetCurrentPowerOfSwitch() {
@@ -76,7 +89,6 @@ let stateMachine = [
 // state 0: Setup up the plug
   function () {
       print("Setup up the plug");
-
       // Set the plug to turn on when power is restored
       Shelly.call("switch.set", { id: 0, on: true}, stubCB, null);
       state_timer = 0;
@@ -88,6 +100,8 @@ let stateMachine = [
         return; // ignore measurement
       }
       average_power = current_power;
+      // set color to orange
+      Shelly.call("HTTP.GET", {url: 'http://127.0.0.1/rpc/PLUGS_UI.SetConfig?config={"leds":{"mode":"switch","colors":{"switch:0":{"on":{"rgb":[100,100,0],"brightness":50},"off":{"rgb":[100,0,0],"brightness":20}}}}}'}, processHttpResponse);
       state = 1;
   },
 
@@ -134,6 +148,9 @@ let stateMachine = [
         print ("Stop charging when power consumption of the charger is less then: " , stop_charge_power , " W")
 
         // Ok we go the next state
+        // set color to green
+        Shelly.call("HTTP.GET", {url: 'http://127.0.0.1/rpc/PLUGS_UI.SetConfig?config={"leds":{"mode":"switch","colors":{"switch:0":{"on":{"rgb":[0,100,0],"brightness":50},"off":{"rgb":[100,0,0],"brightness":20}}}}}'}, processHttpResponse);
+
         state = 2;
     },
 
@@ -148,7 +165,8 @@ let stateMachine = [
         // so we go to state 3
         GetAveragePowerOfLastThreeMeasurements();
         if (average_power < stop_charge_power) {
-                  state = 3;
+          Shelly.call("HTTP.GET", {url: 'http://127.0.0.1/rpc/PLUGS_UI.SetConfig?config={"leds":{"mode":"switch","colors":{"switch:0":{"on":{"rgb":[0,0,100],"brightness":50},"off":{"rgb":[100,0,0],"brightness":20}}}}}'}, processHttpResponse);
+              state = 3;
              return;
         }
     },
@@ -163,6 +181,8 @@ let stateMachine = [
     }
 ];
 
+// default color is blue while in setup mode
+Shelly.call("HTTP.GET", {url: 'http://127.0.0.1/rpc/PLUGS_UI.SetConfig?config={"leds":{"mode":"switch","colors":{"switch:0":{"on":{"rgb":[0,0,100],"brightness":50},"off":{"rgb":[100,0,0],"brightness":20}}}}}'}, processHttpResponse);
 
 let stateTimer = Timer.set(timer_resolution, true, function () {
     stateMachine[state]();
@@ -170,6 +190,6 @@ let stateTimer = Timer.set(timer_resolution, true, function () {
 
 
 
-//
 
-//Timer.set(5000, true, CheckPowerOfSwitch);
+
+
