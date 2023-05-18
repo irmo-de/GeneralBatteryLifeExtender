@@ -12,13 +12,29 @@ Before running this script, make sure you have the following:
 - A Shelly Plug S device
 - The Shelly Plug S API documentation: [Shelly Plug S API](https://shelly-api-docs.shelly.cloud/#shelly-plug-s)
 
+
+## Shelly Plug S Device Purchase Options
+
+- **United States (US):**
+  - Official Shelly Store: [Shelly Plug S - US](https://shelly.cloud/products/shelly-plug-s-smart-home-automation-device/?ref=us)
+  - Amazon US: [Shelly Plug S on Amazon US](https://www.amazon.com/s?k=shelly+plug+s)
+
+- **United Kingdom (UK):**
+  - Official Shelly Store: [Shelly Plug S - UK](https://shelly.cloud/products/shelly-plug-s-smart-home-automation-device/?ref=uk)
+  - Amazon UK: [Shelly Plug S on Amazon UK](https://www.amazon.co.uk/s?k=shelly+plug+s)
+
+- **Europe:**
+  - Official Shelly Store: [Shelly Plug S - Europe](https://shelly.cloud/products/shelly-plug-s-smart-home-automation-device/?ref=europe)
+  - Amazon Europe: [Shelly Plug S on Amazon Europe](https://www.amazon.de/s?k=shelly+plug+s)
+
+
 ## Installation
 
 To install and run the script, follow these steps:
 
 1. Download the script file from the repository.
 2. Ensure you have the necessary dependencies installed, including the Shelly API library.
-3. Configure the constants in the script according to your requirements:
+3. [Optional and normally not needed] Configure the constants in the script according to your requirements:
    - `timer_resolution`: Set the interval (in milliseconds) for calling the state machine.
    - `stop_charge_percentage`: Set the battery charge percentage at which the charging process should stop.
 4. Save the changes to the script file.
