@@ -1,4 +1,4 @@
-// Shelly plug S script to charge a battery to a appproximate 80% to extend the life of the battery
+// Shelly plug S script to charge a battery to a appproximate 90% to extend the life of the battery
 
 // For more information about the Shelly Plug S see:
 // https://shelly.cloud/products/shelly-plug-s-smart-home-automation-device/
@@ -15,9 +15,9 @@
 
 // Release notes:
 
-// 2020-05-14: Added LED color to indicate the state of the statemachine
-// 2020-05-13: Initial release
-
+// 2023-05-18: Improved the learning of the power consumption of the charger
+// 2023-05-14: Added LED color to indicate the state of the statemachine
+// 2023-05-13: Initial release
 
 // define constants
 
@@ -25,8 +25,10 @@ let timer_resolution = 5000; // calling the state machine every 5 seconds
 let state_timer = 0; // internal timer for statemachine to learn the power consumption of the charger
 let average_power = 0; // average power consumption of the charger over 3 minutes
 let state = 0; // state of the statemachine
-let current_average_power = 0; // current average power consumption of the charger
+
 let stop_charge_power = 0; // power consumption of the charger when the battery is aprox 80% charged (reached when 10% of the average power is consumed)
+let stop_charge_percentage = 0.95; // stop charging when the battery falls below 95% of the average power consumption of the charger
+
 let current_power = 0; // current power consumption of the charger
 
 let cnt_initial_measurements = 0; // counter for the initial measurements
@@ -143,7 +145,7 @@ let stateMachine = [
         circular_buffer[2] = average_power;
         circular_buffer_index = 0; 
 
-        stop_charge_power = average_power * 0.95; // 95% of average power
+        stop_charge_power = average_power; // * stop_charge_percentage; // 95% of average power
 
         print ("Stop charging when power consumption of the charger is less then: " , stop_charge_power , " W")
 
@@ -164,11 +166,19 @@ let stateMachine = [
         // if the current average power is less then average power then we have reached the 80% charge of the battery
         // so we go to state 3
         GetAveragePowerOfLastThreeMeasurements();
-        if (average_power < stop_charge_power) {
+        if (average_power < stop_charge_power * stop_charge_percentage) {
+          print("Average power is below stop charge power: " , stop_charge_power * stop_charge_percentage , " W");
           Shelly.call("HTTP.GET", {url: 'http://127.0.0.1/rpc/PLUGS_UI.SetConfig?config={"leds":{"mode":"switch","colors":{"switch:0":{"on":{"rgb":[0,0,100],"brightness":50},"off":{"rgb":[100,0,0],"brightness":20}}}}}'}, processHttpResponse);
               state = 3;
              return;
         }
+
+        // update stop charge power if average power is higher then stop charge power with averaging over 5 times stop_charge_power and 1 time average_power
+        if (average_power > stop_charge_power) {
+          stop_charge_power = ((stop_charge_power * 5 + average_power) / 6);
+          print ("Updating stop charge power " , stop_charge_power , " W (average power is: " , average_power , " W)");
+        }
+
     },
 
    // state 3: Shutdown the plug
