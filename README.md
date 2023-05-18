@@ -16,17 +16,8 @@ Before running this script, make sure you have the following:
 
 You can purchase the Shelly Plus Plug S device from the official Shelly store or other authorized retailers:
 
-- **United States:**
-  - Official Shelly Store: [Shelly Plus Plug S - US](https://shelly.cloud/products/shelly-plus-plug-s)
-  - Amazon: [Shelly Plus Plug S - US](https://www.amazon.com/s?k=shelly+plus+plug+s)
+  - Official Shelly Store: [Shelly Plus Plug S](https://www.shelly.cloud/en/products/shop/shelly-plus-plug-s)
 
-- **United Kingdom:**
-  - Official Shelly Store: [Shelly Plus Plug S - UK](https://shelly.cloud/products/shelly-plus-plug-s)
-  - Amazon: [Shelly Plus Plug S - UK](https://www.amazon.co.uk/s?k=shelly+plus+plug+s)
-
-- **Europe:**
-  - Official Shelly Store: [Shelly Plus Plug S - Europe](https://shelly.cloud/products/shelly-plus-plug-s)
-  - Amazon: [Shelly Plus Plug S - Europe](https://www.amazon.de/s?k=shelly+plus+plug+s)
 
 ## Installation
 
