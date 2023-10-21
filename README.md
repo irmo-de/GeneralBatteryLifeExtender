@@ -23,16 +23,21 @@ You might ask why manufacturers opt for a higher voltage. The answer is simple: 
 
 This open-source solution enables charging your battery to 4.10V, striking a balance between longevity and range/runtime.
 
+
+
 ---
 
 ## What Do You Need?
 
-- A Shelly Plug Plus
+- A Shelly Plus PlugS
+
+![Shelly_Plus_PlugS_Black_x1-625x625](https://github.com/irmo-de/GeneralBatteryLifeExtender/assets/20524312/8166f0a0-be0f-485d-9c9f-47a095cf5434)
+
 - 5 minutes for setup
 
 The setup guide is provided at the end of this document.
 
-> **Note:** Ensure you have a Shelly Plug *Plus* model, not the previous model called Shelly Plug.
+> **Note:** Ensure you have a *Shelly Plus PlugS* model, not the previous model.
 
 ---
 
