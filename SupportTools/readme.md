@@ -1,3 +1,6 @@
+# These tools are for developers who wants to support the project. End users do not need them
+
+
 # WebSocket Consumer
 
 This Python script connects to a WebSocket and extracts the "data" field from the received messages if the 
