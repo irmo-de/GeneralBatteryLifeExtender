@@ -45,6 +45,9 @@ The setup guide is provided at the end of this document.
 
 A set-and-forget solution. Simply plug in the Shelly and the charger, and you're done. Use it to charge while you're on the go, in the office, or at home. No additional hardware or network is needed.
 
+![empower](https://github.com/irmo-de/GeneralBatteryLifeExtender/assets/20524312/42ec0b2e-1e8c-4a51-94be-d0b3d1f98822)
+
+
 ---
 
 ## Who Helped Develop This?
