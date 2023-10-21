@@ -3,6 +3,8 @@
 # Extend Your Battery Life by Up to 100%* :battery: :recycle:
 
 
+![logo_for_a_power_outlet_that_saves_energy_and_pr (1)](https://github.com/irmo-de/ShellyBatteryLifeExtender/assets/20524312/b7c49bb1-87eb-4746-b726-48d483b00f66)
+
 ---
 
 ## How Does It Work?
