@@ -1,12 +1,53 @@
 
 # Save Money, Save the Earth 🍃 : Boost Your Battery Life by 100%
 
-![shelly](https://github.com/irmo-de/ShellyBatteryLifeSaver/assets/20524312/82293dc5-e5b4-4426-b0fc-485c48549fb1)
 
-# ShellyBatteryLifeSaver (Shelly Plug S Battery Charging Script)
-Shelly *plus* plug S script to charge a battery to approximate 90% to extend the life of the battery
+# Extend Your Battery Life by Up to 100%* :battery: :recycle:
 
-This script is designed to charge a battery connected to a Shelly Plus Plug S smart plug to approximately 90% in order to extend the battery's lifespan. The script utilizes a state machine to control the charging process and monitor the power consumption of the plug.
+Help save the environment and reduce costs by extending the life of your battery. 
+
+---
+
+## How Does It Work?
+
+Most chargers used for eBikes, eScooters, mobile phones, etc., charge battery cells to 4.2V to maximize capacity. However, this is not optimal for battery longevity.
+
+By charging them only to 4.1V per cell, you can prolong the battery's lifetime by up to 100%.
+
+In numerical terms: a lithium-ion cell charged to 4.20V/cell typically delivers 300–500 cycles. If charged to only 4.10V/cell, the life can be prolonged to 600–1,000 cycles.
+
+You might ask why manufacturers opt for a higher voltage. The answer is simple: consumers demand optimal range and runtime, and a shorter battery lifespan encourages more frequent purchases. For instance, a replacement battery for the Cowboy 4 eBike costs around 500 USD.
+
+This open-source solution enables charging your battery to 4.10V, striking a balance between longevity and range/runtime.
+
+---
+
+## What Do You Need?
+
+- A Shelly Plug Plus
+- 5 minutes for setup
+
+The setup guide is provided at the end of this document.
+
+> **Note:** Ensure you have a Shelly Plug *Plus* model, not the previous model called Shelly Plug.
+
+---
+
+## What Will You Get?
+
+A set-and-forget solution. Simply plug in the Shelly and the charger, and you're done. Use it to charge while you're on the go, in the office, or at home. No additional hardware or network is needed.
+
+---
+
+## Who Helped Develop This?
+
+This idea was conceived in a large international eScooter forum for enthusiasts. Special shoutouts to Pedalheld56, ScooterFreak, FrankA, and Dennis who conducted endless tests with different battery models. Ultimately, thousands of measurements were analyzed, leading to a relatively simple algorithm that supports nearly every type of battery.
+
+To help more individuals contribute to the planet and save on expenses, this open-source project has found a new home here on GitHub.
+
+---
+
+## Setup Guide
 
 ## Prerequisites
 
@@ -57,3 +98,11 @@ To use the script, follow these instructions:
 
 - Irmo Ebel
 - Date: 2023-05-13
+
+
+// Your setup guide goes here
+
+---
+
+\* Based on information from [Battery University](https://batteryuniversity.com/article/bu-808-how-to-prolong-lithium-based-batteries#:~:text=If%20charged%20to%20only%204.10,the%20capacity%20the%20battery%20stores).
+
