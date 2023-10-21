@@ -1,13 +1,17 @@
 
-<img src="https://github.com/irmo-de/ShellyBatteryLifeExtender/assets/20524312/b7c49bb1-87eb-4746-b726-48d483b00f66" style="float: right; margin-left: 10px;" alt="BatteryLifeLogo"/>
-
 # Save Money, Save the Earth 🍃 
-# Extend Your Battery Life by Up to 100%* :battery: :recycle:
+# Extend Your Battery Life by Up to 100%* :battery: :recycle: with a ShellyPlugS 
 
+<p align="right">
+  <img src="https://github.com/irmo-de/ShellyBatteryLifeExtender/assets/20524312/5abd73a5-41c0-4470-81d6-3ed875d6d0f7" alt="resized_logo"/>
+</p>
 
 ---
 
 ## How Does It Work?
+
+
+
 
 Most chargers used for eBikes, eScooters, mobile phones, etc., charge battery cells to 4.2V to maximize capacity. However, this is not optimal for battery longevity.
 
