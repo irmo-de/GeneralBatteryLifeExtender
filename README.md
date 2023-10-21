@@ -1,6 +1,6 @@
 
 # Save Money, Save the Earth 🍃 
-# Extend Your Battery Life by Up to 100%* :battery: :recycle: with a ShellyPlugS 
+# Extend Your Battery Life by Up to 100%* :battery: :recycle: using a ShellyPlugS with this Software 
 
 <p align="right">
   <img src="https://github.com/irmo-de/ShellyBatteryLifeExtender/assets/20524312/5abd73a5-41c0-4470-81d6-3ed875d6d0f7" alt="resized_logo"/>
