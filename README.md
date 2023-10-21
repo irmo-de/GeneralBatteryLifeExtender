@@ -1,8 +1,5 @@
 
-# Save Money, Save the Earth 🍃 : Boost Your Battery Life by 100%
-
-
-# Extend Your Battery Life by Up to 100%* :battery: :recycle:
+# Save Money, Save the Earth 🍃 Extend Your Battery Life by Up to 100%* :battery: :recycle:
 
 Help save the environment and reduce costs by extending the life of your battery. 
 
