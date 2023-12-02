@@ -1,4 +1,4 @@
-# These tools are for developers who wants to support the project. End users do not need them
+# These tools are for developers who wants to support the project
 
 
 # WebSocket Consumer
